@@ -1,0 +1,257 @@
+{
+  "info": {
+    "_postman_id": "c10e2fd1-f7d8-4dd3-8584-f9b6f654f57c",
+    "name": "Inventory Service",
+    "description": "Collection for Lab 6 - Inventory Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53883102",
+    "_collection_link": "https://go.postman.co/collection/53883102-c10e2fd1-f7d8-4dd3-8584-f9b6f654f57c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Register Item (POST /register)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "inventory_name",
+              "value": "Laptop Dell XPS",
+              "type": "text"
+            },
+            {
+              "key": "description",
+              "value": "Company laptop, 16GB RAM",
+              "type": "text"
+            },
+            {
+              "key": "photo",
+              "type": "file",
+              "value": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "localhost:3000/register",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Inventory (GET /inventory)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/inventory",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Item by ID (GET /inventory/:id)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/inventory/REPLACE_WITH_ID",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "REPLACE_WITH_ID"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Item (PUT /inventory/:id)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"inventory_name\": \"Updated Name\",\n  \"description\": \"Updated description\"\n}"
+        },
+        "url": {
+          "raw": "localhost:3000/inventory/REPLACE_WITH_ID",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "REPLACE_WITH_ID"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Item Photo (GET /inventory/:id/photo)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/inventory/REPLACE_WITH_ID/photo",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "REPLACE_WITH_ID",
+            "photo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Item Photo (PUT /inventory/:id/photo)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "image/jpeg"
+          }
+        ],
+        "body": {
+          "mode": "file",
+          "file": {
+            "src": ""
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/inventory/REPLACE_WITH_ID/photo",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "REPLACE_WITH_ID",
+            "photo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Item (DELETE /inventory/:id)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/inventory/REPLACE_WITH_ID",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "inventory",
+            "REPLACE_WITH_ID"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Item (POST /search)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "id",
+              "value": "REPLACE_WITH_ID"
+            },
+            {
+              "key": "has_photo",
+              "value": "on"
+            }
+          ]
+        },
+        "url": {
+          "raw": "localhost:3000/search",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "search"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Open RegisterForm (GET /RegisterForm.html)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/RegisterForm.html",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "RegisterForm.html"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Open SearchForm (GET /SearchForm.html)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/SearchForm.html",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "SearchForm.html"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
