@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Registration</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 20px;
+    }
+    .card {
+      background: white; border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 40px; width: 100%; max-width: 480px;
+    }
+    h2 { font-size: 1.6rem; color: #1a1a2e; margin-bottom: 28px; }
+    label { display: block; font-size: 0.85rem; font-weight: 600;
+      color: #555; margin-bottom: 6px; }
+    input[type=text], textarea {
+      width: 100%; padding: 10px 14px; border: 1.5px solid #ddd;
+      border-radius: 8px; font-size: 0.95rem;
+      transition: border-color 0.2s; outline: none;
+    }
+    input[type=text]:focus, textarea:focus { border-color: #4f6ef7; }
+    textarea { resize: vertical; }
+    .field { margin-bottom: 20px; }
+    input[type=file] {
+      width: 100%; padding: 8px; border: 1.5px dashed #ccc;
+      border-radius: 8px; background: #fafafa; cursor: pointer;
+    }
+    button {
+      width: 100%; padding: 12px; background: #4f6ef7;
+      color: white; border: none; border-radius: 8px;
+      font-size: 1rem; font-weight: 600; cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #3a57d4; }
+    .link { text-align: center; margin-top: 16px; font-size: 0.85rem; color: #888; }
+    .link a { color: #4f6ef7; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>📦 Inventory Registration</h2>
+    <form method="post" action="/register" enctype="multipart/form-data">
+      <div class="field">
+        <label for="inventory_name">Name <span style="color:red">*</span></label>
+        <input type="text" id="inventory_name" name="inventory_name" placeholder="Enter item name" required>
+      </div>
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4" placeholder="Enter item description"></textarea>
+      </div>
+      <div class="field">
+        <label for="photo">Photo</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+      </div>
+      <button type="submit">Register Item</button>
+    </form>
+    <div class="link"><a href="/SearchForm.html">Go to Search →</a></div>
+  </div>
+</body>
+</html>

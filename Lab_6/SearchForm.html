@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Search</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 20px;
+    }
+    .card {
+      background: white; border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 40px; width: 100%; max-width: 440px;
+    }
+    h1 { font-size: 1.6rem; color: #1a1a2e; margin-bottom: 28px; }
+    label { display: block; font-size: 0.85rem; font-weight: 600;
+      color: #555; margin-bottom: 6px; }
+    input[type=text] {
+      width: 100%; padding: 10px 14px; border: 1.5px solid #ddd;
+      border-radius: 8px; font-size: 0.95rem;
+      transition: border-color 0.2s; outline: none;
+    }
+    input[type=text]:focus { border-color: #4f6ef7; }
+    .field { margin-bottom: 20px; }
+    .checkbox-row {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 24px;
+    }
+    .checkbox-row input[type=checkbox] {
+      width: 18px; height: 18px; cursor: pointer; accent-color: #4f6ef7;
+    }
+    .checkbox-row label { margin: 0; font-weight: 500; font-size: 0.9rem; }
+    button {
+      width: 100%; padding: 12px; background: #4f6ef7;
+      color: white; border: none; border-radius: 8px;
+      font-size: 1rem; font-weight: 600; cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #3a57d4; }
+    .link { text-align: center; margin-top: 16px; font-size: 0.85rem; color: #888; }
+    .link a { color: #4f6ef7; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🔍 Inventory Search</h1>
+    <!-- ВАЖЛИВО: method="POST" і enctype="application/x-www-form-urlencoded" -->
+    <form action="/search" method="POST" enctype="application/x-www-form-urlencoded">
+      <div class="field">
+        <label for="id">Item ID</label>
+        <input type="text" id="id" name="id" placeholder="Enter item ID" required>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="has_photo" name="has_photo" value="on">
+        <label for="has_photo">Include photo link in response</label>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+    <div class="link"><a href="/RegisterForm.html">← Go to Registration</a></div>
+  </div>
+</body>
+</html>
