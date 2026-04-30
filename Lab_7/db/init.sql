@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS inventory (
+  id VARCHAR(20) PRIMARY KEY,
+  inventory_name VARCHAR(255) NOT NULL,
+  description VARCHAR(1000) DEFAULT ''
+);
